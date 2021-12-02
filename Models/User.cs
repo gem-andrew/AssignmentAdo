@@ -26,6 +26,13 @@ namespace AssignmentAdo.Models
         [Required]
         [Display(Name = "Email")]
         public string email { get; set; }
-
     }
+    //public enum Gender
+    //{
+    //    Male,
+    //    Female,
+    //    Other
+    //}
+   
+
 }

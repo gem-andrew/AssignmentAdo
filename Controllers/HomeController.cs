@@ -9,6 +9,21 @@ namespace AssignmentAdo.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult CreatePassword()
+        {
+            return View();
+        }
+
+        public ActionResult ForgetPassword()
+        {
+            return View();
+
+        }
         public ActionResult Index()
         {
             UserDBContext db = new UserDBContext();
