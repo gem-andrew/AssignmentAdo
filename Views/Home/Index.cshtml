@@ -1,0 +1,81 @@
+﻿@model IEnumerable<AssignmentAdo.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["InsertionMessage"] != null)
+{<div class="alert alert-success">
+        <strong>@TempData["InsertionMessage"]</strong>
+    </div>
+}
+@if (TempData["UpdationMessage"] != null)
+{<div class="alert alert-success">
+        <strong>@TempData["UpdationMessage"]</strong>
+    </div>
+}
+@if (TempData["DeletionMessage"] != null)
+{<div class="alert alert-danger">
+        <strong>@TempData["DeletionMessage"]</strong>
+    </div>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-stripped">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.dateOfBirth)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            Operations
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.dateOfBirth)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
