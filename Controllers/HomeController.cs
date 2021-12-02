@@ -9,13 +9,38 @@ namespace AssignmentAdo.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Login()
-        {
-            return View();
-        }
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
         public ActionResult CreatePassword()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreatePassword(Password ps)
+        {
+            try
+            {
+                if (ModelState.IsValid == true)
+                {
+                    PasswordDBContext context = new PasswordDBContext();
+                    bool check = context.AddPassword(ps);
+                    if (check == true)
+                    {
+                        TempData["PasswordCreationMessage"] = "User Registered Successfully.";
+                        //clear model state would empty the data that was previously entered in form 
+                        ModelState.Clear();
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
             return View();
         }
 
@@ -50,7 +75,7 @@ namespace AssignmentAdo.Controllers
                         TempData["InsertionMessage"] = "Data Inserted Successfully.";
                         //clear model state would empty the data that was previously entered in form 
                         ModelState.Clear();
-                        return RedirectToAction("Index");
+                        return RedirectToAction("CreatePassword");
                     }
                 }
                 return View();
