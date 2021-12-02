@@ -55,7 +55,8 @@ namespace AssignmentAdo.Models
             cmd.Parameters.AddWithValue("@email", us.email);
             con.Open();
             int i = cmd.ExecuteNonQuery();//returns an integer 1 if successful else 0
-            if(i > 0)
+            con.Close();
+            if (i > 0)
             {
                 return true;
             }
@@ -82,6 +83,7 @@ namespace AssignmentAdo.Models
             cmd.Parameters.AddWithValue("@email", us.email);
             con.Open();
             int i = cmd.ExecuteNonQuery();//returns an integer 1 if successful else 0
+            con.Close();
             if (i > 0)
             {
                 return true;
@@ -103,6 +105,7 @@ namespace AssignmentAdo.Models
             cmd.Parameters.AddWithValue("@id", id);
             con.Open();
             int i = cmd.ExecuteNonQuery();//returns an integer 1 if successful else 0
+            con.Close();
             if (i > 0)
             {
                 return true;

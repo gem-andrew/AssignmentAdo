@@ -1,0 +1,44 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+    <style>
+        input {
+            padding: 14px 20px;
+            margin: 8px 0px;
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    @Html.Partial("_MenuBar")
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div class="container">
+                <h1><b>LOGIN</b></h1>
+                <label for="email">Email Id</label>
+                <input type="email" placeholder="Email Id" name="email" required />
+                <br />
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+                <br />
+                <button type="submit">Login</button>
+                <br />
+
+                @Html.ActionLink("Register Here", "Create", "Home", new { })
+                &nbsp;
+                @Html.ActionLink("Forget Password?", "ForgotPassword", "Home", new { })
+            </div>}
+
+
+
+
+    </div>
+</body>
+</html>
