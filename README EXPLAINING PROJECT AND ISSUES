@@ -10,6 +10,16 @@ facing issues with parts where 2 tables are used at once like login and forget p
 dashboard depends on login and I tried it but giving error.
 Delete was working fine but now it is not because of some foriegn key issue I am not able to resolve.
 how to do the password encrytpion part
+there was an issue where some users were not registering and when trying with different name it got registered but ids in b/w skipped.
+eg,
+id 1a registered
+id 2 b failed 
+id 3 c failed
+id 4 d registered
+so db was showing
+1 a
+4 d
+coudn't retrieve the lost ids
 BUG: 
 Some users are not able to register I don't know why, 
 example, I tried to register Ayush Katiyar and it didn't register, I'm not able to fix that bug.
