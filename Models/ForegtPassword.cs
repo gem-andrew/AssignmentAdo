@@ -6,14 +6,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AssignmentAdo.Models
 {
-    public class Password
+    public class ForegtPassword
     {
         public int id { get; set; }
         [Required]
-        [Display(Name ="Enter Password")]
+        [Display(Name ="Enetr Your Email")]
+        public string email { get; set; }
+        [Display(Name = "Enter New Password")]
         public string pass { get; set; }
         [Required]
-        [Display(Name = "Re-Enter Password")]
+        [Display(Name = "Re-Enter New Password")]
         public string confirmPass { get; set; }
+
     }
 }

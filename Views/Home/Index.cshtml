@@ -25,8 +25,13 @@
         <strong>@TempData["PasswordCreationMessage"]</strong>
     </div>
 }
+@if (TempData["LoginMessage"] != null)
+{<div class="alert alert-danger">
+        <strong>@TempData["LoginMessage"]</strong>
+    </div>
+}
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("REGISTER", "Create")
 </p>
 <table class="table table-bordered table-hover table-stripped">
     <tr>
@@ -83,4 +88,8 @@
         </tr>
     }
 
+
 </table>
+@Html.ActionLink("Forget Password?", "ForgetPassword")
+<br />
+@Html.ActionLink("Login", "Login")
