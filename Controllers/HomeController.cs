@@ -8,12 +8,29 @@ namespace AssignmentAdo.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        //public ActionResult Login()
+        
+        public ActionResult Login()
+        {
+            return View();
+        }
+        //[HttpPost]
+        //public ActionResult Login(Login lp)
         //{
-        //    return View();
-        //}
 
+        //    if (ModelState.IsValid == true)
+        //    {
+        //        LoginDBContext context = new LoginDBContext();
+        //        bool check = context.CheckLogin(lp);
+        //        if (check == true)
+        //        {
+        //            TempData["LoginMessage"] = "Logged-In Successfully.";
+        //            //clear model state would empty the data that was previously entered in form 
+        //            //ModelState.Clear();
+        //            return RedirectToAction("Index");
+        //        }
+        //        return View();
+        //    }
+        //}
         public ActionResult CreatePassword()
         {
             return View();
@@ -21,7 +38,11 @@ namespace AssignmentAdo.Controllers
         [HttpPost]
         public ActionResult CreatePassword(Password ps)
         {
-            try
+            if (ps.pass != ps.confirmPass)
+            {
+                ViewBag.Message = "Password does not match";
+                return View(ps);
+            }
             {
                 if (ModelState.IsValid == true)
                 {
@@ -37,13 +58,7 @@ namespace AssignmentAdo.Controllers
                 }
                 return View();
             }
-            catch
-            {
-                return View();
-            }
-            return View();
         }
-
         public ActionResult ForgetPassword()
         {
             return View();

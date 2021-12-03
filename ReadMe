@@ -1,0 +1,11 @@
+This project can register a user.
+When the page opens it gives list of users instead of login because facing issue with login part.
+While registering it also directs to create password page and succesfully registers the user and then redirects to home page.
+Password length should match I have done that validation.
+In home page, we can edit, delete and see details of user.
+ISSUES:
+facing issues with parts where 2 tables are used at once like login and forget password, therefore the UI is ready but they are not functional
+how to do the password encrytpion part
+BUG: 
+Some users are not able to register I don't know why, 
+example, I tried to register Ayush Katiyar and it didn't register, I'm not able to fix that bug.
