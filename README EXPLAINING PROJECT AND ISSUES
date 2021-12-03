@@ -1,13 +1,15 @@
-This project can register a user.
-When the page opens it gives list of users instead of login because facing issue with login part.
+When the page open we are redirected to login page.
+If we login with a valid user (try email - ayushKK@gmail.com , password - akdm12), if login successful we are for now directed to the page which shows list of users with a welcome message,
+else we are redirected to same page saying login failed.
+---------------------------------------------------------------
+We can register a user.
 While registering it also directs to create password page and succesfully registers the user and then redirects to home page.
 Password length should match I have done that validation.
-In home page, we can edit, delete and see details of user.
+In home page, we can edit and see details of user. (Delete is not working properly)
 Edit will change the user details in database
 Details will show the hidden details as well like id and date of birth which is not visible
 ISSUES:
-facing issues with parts where 2 tables are used at once like login and forget password, therefore the UI is ready but they are not functional
-dashboard depends on login and I tried it but giving error.
+Forget password part remains for now.
 Delete was working fine but now it is not because of some foriegn key issue I am not able to resolve.
 how to do the password encrytpion part
 there was an issue where some users were not registering and when trying with different name it got registered but ids in b/w skipped.
