@@ -120,6 +120,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\ForegtPassword.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDBContext.cs" />
@@ -165,6 +166,7 @@
     <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Home\ForgetPassword.cshtml" />
     <Content Include="Views\Home\CreatePassword.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,24 +13,25 @@ namespace AssignmentAdo.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public ActionResult Login(Login lp)
-        //{
 
-        //    if (ModelState.IsValid == true)
-        //    {
-        //        LoginDBContext context = new LoginDBContext();
-        //        bool check = context.CheckLogin(lp);
-        //        if (check == true)
-        //        {
-        //            TempData["LoginMessage"] = "Logged-In Successfully.";
-        //            //clear model state would empty the data that was previously entered in form 
-        //            //ModelState.Clear();
-        //            return RedirectToAction("Index");
-        //        }
-        //        return View();
-        //    }
-        //}
+        [HttpPost]
+        public ActionResult Login(Login login)
+        {
+            LoginDBContext loginDBContext = new LoginDBContext();
+            var result = loginDBContext.CheckLogin(login);
+            if (result)
+            {
+                Session["username"] = login.email.ToString();
+                TempData["LoginSuccessMessage"] = "Login Successfull";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["LoginFailedMessage"] = "Login Failed";
+            }
+            return View();
+        }
+
         public ActionResult CreatePassword()
         {
             return View();
@@ -70,6 +71,11 @@ namespace AssignmentAdo.Controllers
             List<User> obj = db.GetUsers();
             return View(obj);
         }
+
+        //public ActionResult Dashboard()
+        //{
+        //    return View();
+        //}
 
         public ActionResult Create() //only for generating view
         {
