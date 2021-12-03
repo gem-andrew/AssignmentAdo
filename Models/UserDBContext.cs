@@ -101,10 +101,16 @@ namespace AssignmentAdo.Models
             SqlCommand cmd = new SqlCommand("spDeleteUser", con); // we already have a stored procedure spGetUsers
             //now we have to tell that this is a stored procedure
             cmd.CommandType = CommandType.StoredProcedure; //we are telling that the query in cmd is stored procedure 
+            //SqlCommand cmd2 = new SqlCommand("spDeletePassword", con);
+            //cmd2.CommandType = CommandType.StoredProcedure;
+
+
             //this stored procedure takes values
             cmd.Parameters.AddWithValue("@id", id);
+            //cmd2.Parameters.AddWithValue("@id", id);
             con.Open();
             int i = cmd.ExecuteNonQuery();//returns an integer 1 if successful else 0
+            //int j = cmd.ExecuteNonQuery();
             con.Close();
             if (i > 0)
             {

@@ -30,6 +30,15 @@
         <strong>@TempData["LoginMessage"]</strong>
     </div>
 }
+
+
+@if (TempData["LoginSuccessMessage"] != null)
+{<div class="alert alert-success">
+        <strong>@TempData["LoginSuccessMessage"]</strong>
+    </div>}
+<br />
+@if(Session["username"] != null) {
+<h2>Welcome, @Session["username"]</h2>}
 <p>
     @Html.ActionLink("REGISTER", "Create")
 </p>
